@@ -51,7 +51,8 @@ Una ves que tengamos NVM es cuestión de utilizarlo en la terminal
 
 ## ZSH
 #### Instala zsh
-sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"   
+
 chsh -s $(which zsh)
 #### Crear alias
 atom ~/.zshrc   
