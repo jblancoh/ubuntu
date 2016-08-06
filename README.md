@@ -26,7 +26,7 @@ sudo apt-get install python3-dev
 pip install psycopg2
 
 
-## Postgres
+## 1 Postgres
 #### Instalar Postgresql
 sudo apt-get install postgresql
 #### Instalar libpq-dev (para conectar django con postgres)
@@ -36,6 +36,25 @@ sudo su postgres -c "psql template1"
 ```
 ALTER USER postgres WITH PASSWORD 'postgres';
 ```
+## 2 Postgres
+#### Instalar Postgresql
+sudo apt-get install libpq-dev python-dev
+#### Instalar libpq-dev (para conectar django con postgres)
+sudo apt-get install postgresql postgresql-contrib
+
+### Create the database
+sudo su - postgres
+$ psql
+psql (9.3.4)
+Type "help" for help.
+
+CREATE USER name WITH PASSWORD 'password';
+ 
+CREATE DATABASE djangogirls OWNER name;
+
+### Install Django within a Virtual Environment
+source myenv/bin/activate
+pip install django psycopg2
 
 ## NODEJS
 #### Instala NVM
