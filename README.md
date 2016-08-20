@@ -84,3 +84,17 @@ which -s atom && export EDITOR="atom --wait"
 git config --global user.name "Juan Perez”   
 git config --global user.email    juanperez@ejemplo.com   
 git config --global core.editor “atom -w"   
+
+## BROWSERSYNC
+#### Install
+npm install -g browser-sync
+
+#### Start Browsersync
+
+A basic use is to watch all CSS files in the css directory and update connected browsers if a change occurs. Navigate your terminal window to a project and run the appropriate command:
+
+Static sites
+
+If you’re only using .html files, you’ll need to use the server mode. Browsersync will start a mini-server and provide a URL to view your site.
+
+browser-sync start --server --files "css/*.css"
