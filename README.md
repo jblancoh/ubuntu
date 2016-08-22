@@ -98,3 +98,5 @@ Static sites
 If you’re only using .html files, you’ll need to use the server mode. Browsersync will start a mini-server and provide a URL to view your site.
 
 browser-sync start --server --files "css/*.css"
+browser-sync start --server --directory --files "*"
+
