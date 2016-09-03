@@ -54,7 +54,11 @@ CREATE DATABASE djangogirls OWNER name;
 
 ### Install Django within a Virtual Environment
 source myenv/bin/activate
+
 pip install django psycopg2
+
+virtualenv -p python3 envname
+
 
 ## NODEJS
 #### Instala NVM
