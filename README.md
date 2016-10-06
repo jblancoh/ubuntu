@@ -110,4 +110,40 @@ browser-sync start --server --files "css/*.css"
 browser-sync start --server --directory --files "*"
 
 
+sudo apt install zsh
+sudo apt install curl
+sudo apt install git
+sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+chsh -s $(which zsh)
+sudo apt install python3
+sudo apt-get install python3-pip
+sudo apt-get install python3-dev
+git clone https://github.com/jblancoh/Hospital.git
+sudo apt install virtualenv
+virtualenv -p python3 myhosp
+source bin/activate
+pip install django==1.8
+deactivate
+sudo apt-get install postgresql
+sudo apt-get install libpq-dev
+sudo apt-get install apache2
+sudo apt-get install python-setuptools
+sudo apt-get install libapache2-mod-wsgi
+source bin/activate
+pip install psycopg2
+pip install django-import-export
+*****Crear base de datos******
+sudo su - postgres
+createuser admin
+psql
+alter user admin with password 'postgres';
+\q
+python manage.py createsuperuser
+python manage.py makemigrations
+python manage.py migrate
+python manage.py runserver 0.0.0.0:8000
 
+
+sudo apt-get install gunicorn 
+
+gunicorn hospital.wsgi:application --bind 192.168.75.128:8000
