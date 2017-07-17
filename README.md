@@ -132,7 +132,7 @@ sudo apt-get install libapache2-mod-wsgi
 source bin/activate
 pip install psycopg2
 pip install django-import-export
-*****Crear base de datos******
+*****Crear base de datos*****
 sudo su - postgres
 createuser admin
 psql
@@ -147,3 +147,44 @@ python manage.py runserver 0.0.0.0:8000
 sudo apt-get install gunicorn 
 
 gunicorn hospital.wsgi:application --bind 192.168.75.128:8000
+
+## MYSQL CONFIG ROOT(PASSWORD)
+Which one-click-setup did you use? You can check the configuration files probably and find the password. 
+If you can't find it, neither root without pass is working you can reset it:
+
+Commands
+```
+sudo /etc/init.d/mysql stop
+```
+Now start up MySQL in safe mode, so you'll skip the privileges table:
+```
+sudo mysqld_safe --skip-grant-tables &
+```
+Login with root:
+```
+mysql -uroot
+```
+And assign the DB that needs to be used:
+```
+use mysql;
+```
+Now all you have to do is reset your root password of the MySQL user and restart the MySQL service:
+```
+update user set password=PASSWORD("YOURPASSWORDHERE") where User='root';
+```
+```
+flush privileges;
+```
+quit and restart MySQL:
+```
+quit
+```
+```
+sudo /etc/init.d/mysql stop
+sudo /etc/init.d/mysql start
+```
+Now your root password should be working with the one you just set, check it with:
+```
+mysql -u root -p
+```
+Hope this will help you figure it out.
